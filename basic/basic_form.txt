@@ -1,0 +1,18 @@
+var 온도 = [] ; 
+var 판매량 = [] ;
+var 원인 = tf.tensor(온도);
+var 결과 = tf.tensor(판매량);
+
+var X = tf.input({ shape:[] });
+var Y = tf.layers.dense({ units: }).apply(X);
+var model = tf.model({ inputs:X, outputs:Y });
+var compileParam = { optimizer:tf.train.adam(), loss: tf.losses.meanSquaredError };
+model.compile(compileParam);
+
+var fitParam = {epochs: }
+model.fit(원인, 결과, fitParam).then(function(result){
+  var 다음주온도 = []
+  var 다음주원인 = tf.tensor2d(다음주온도, [다음주온도.length,1]);
+  var 다음주결과 = model.predict(다음주원인);
+  다음주결과.print();
+});
